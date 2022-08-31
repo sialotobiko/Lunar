@@ -1,0 +1,32 @@
+{
+"hairstyles" : [
+    {
+        "id": 1,
+        "name": "Knotless Braids",
+        "price": "Ksh 3000",
+        "image": "https://i.pinimg.com/originals/a8/f1/19/a8f1195df039827af94a9efbc4b84f73.jpg",
+        "timeSlot": ""
+    },
+    {
+        "id": 2,
+        "name": "Faux Locs",
+        "price": "Ksh 5000",
+        "image": "https://storage.googleapis.com/prose-blog-media/1/2019/10/faux-locs-1.jpg",
+        "timeSlot": ""
+    },
+    {
+        "id": 3,
+        "name": "Goddess Braids",
+        "price": "Ksh 3500",
+        "image": "https://i2.wp.com/www.hadviser.com/wp-content/uploads/2021/01/3-goddes-box-braids-COCA_EJpsnW.jpg?resize=974%2C1217&ssl=1",
+        "timeSlot": ""
+    },
+    {
+        "id": 4,
+        "name": "Cornrows",
+        "price": "Ksh 1000",
+        "image": "https://zaineey.com/wp-content/uploads/2020/10/latest-cornrow-braids-12.jpg",
+        "timeSlot": ""
+    }
+]
+}
