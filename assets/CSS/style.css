@@ -16,9 +16,20 @@
     font-style: italic;
 }
 
+.hairstylesdiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hairstyle{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .hairstylesdiv img{
-    width: 25%;
-    height: 500px;
+    width: 100%;
+    height: 400px;
 }
 
 button{
