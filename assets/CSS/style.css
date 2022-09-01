@@ -9,11 +9,13 @@
 
 .heading h1{
     font-size: 50pt;
+    color: #af1e04;
 }
 
 .heading h2{
     font-size: 30pt;
     font-style: italic;
+    color: #79443B;
 }
 
 .hairstylesdiv{
@@ -45,4 +47,8 @@ button{
 
 .hairstylesdiv span{
     font-size: 30pt;
+}
+
+.commentsdiv{
+    text-align: center;
 }
