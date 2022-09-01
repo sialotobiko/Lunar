@@ -1,7 +1,17 @@
 *{
     font-family: "Nunito";
+    background-color: bisque;
 }
 
 .heading{
     text-align: center;
+}
+
+.heading h1{
+    font-size: 50pt;
+}
+
+.heading h2{
+    font-size: 30pt;
+    font-style: italic;
 }
