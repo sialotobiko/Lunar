@@ -9,13 +9,13 @@
 
 .heading h1{
     font-size: 50pt;
-    color: #af1e04;
+    color: #79443B;
 }
 
 .heading h2{
     font-size: 30pt;
     font-style: italic;
-    color: #79443B;
+    color: #D2691E;
 }
 
 .hairstylesdiv{
@@ -43,12 +43,29 @@ button{
 
 .hairstylesdiv p{
     font-size: 20pt;
+    color: #af1e04;
 }
 
 .hairstylesdiv span{
     font-size: 30pt;
 }
 
+hr{
+    box-shadow: 10px 10px #79443B;
+    height: 5px;
+}
+
 .commentsdiv{
     text-align: center;
+}
+
+.commentsdiv input{
+    font-size: 20pt;
+    background-color: #79443B;
+    color: white;
+}
+
+#comment{
+    width: 1000px;
+    background-color: white;
 }
