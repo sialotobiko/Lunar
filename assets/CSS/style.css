@@ -74,3 +74,26 @@ hr{
     width: 1000px;
     background-color: white;
 }
+
+footer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer h2{
+    color: #79443B;
+    font-size: 20pt;
+}
+
+footer h3{
+    font-size: 18pt;
+}
+
+#location{
+    width: 50%;
+}
+
+#contact{
+    width: 50%;
+}
