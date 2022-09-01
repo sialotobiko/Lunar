@@ -1,5 +1,7 @@
+const hairstylesApi ="http://localhost:3000/hairstyles"
+
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/hairstyles")
+  fetch (hairstylesApi)
     .then((res) => res.json())
     .then((hairstyles) => {
       document.getElementById("hairstyles").innerHTML = hairstyles
@@ -12,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <button id="bookbtn">Book Appointment</button>
           <br>
           <div class="timeslots">
-            ${hairstyle.timeSlot.map(timeSlot=>`<div>${timeSlot}</div>`).join('')}
-            <button id="bookslotbtn">Book this slot</button>
+            
           </div>
+          
           <p>Like!    <span class="like-glyph">&#x2661;</span></p>
       </div>
 
@@ -24,3 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.querySelector("#bookbtn").addEventListener("click", () => {
+    fetch (hairstylesApi)
+    .then((res) => res.json())
+    .then((timeSlots) => {
+        document.querySelector(".timeslots").innerHTML = timeSlots
+        .map(
+            (timeslot) => `
+            <div class="timeslots">
+            ${hairstyle.timeSlot.map(timeSlot=>`<div>${timeSlot}</div>`).join('')}
+            <button id="bookslotbtn">Book this slot</button>
+          </div>
+            `
+        )
+    })
+})
