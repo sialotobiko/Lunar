@@ -10,6 +10,7 @@
 .heading h1{
     font-size: 50pt;
     color: #79443B;
+    text-shadow: 3px 3px #D2691E;
 }
 
 .heading h2{
@@ -32,6 +33,10 @@
 .hairstylesdiv img{
     width: 100%;
     height: 400px;
+}
+
+.hairstylesdiv h2{
+    text-shadow: 2px 2px #D2691E;
 }
 
 button{
