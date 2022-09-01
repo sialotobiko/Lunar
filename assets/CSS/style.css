@@ -55,6 +55,14 @@ button{
     font-size: 30pt;
 }
 
+.hairstyle div{
+    font-size: 15pt;
+}
+
+.timeslots button{
+    font-size: 15pt;
+}
+
 hr{
     box-shadow: 10px 10px #79443B;
     height: 5px;

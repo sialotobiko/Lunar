@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
           <button id="bookbtn">Book Appointment</button>
+          <br>
           <div class="timeslots">
-            ${hairstyle.timeslot.map(timeslot) }
+            ${hairstyle.timeSlot.map(timeSlot=>`<div>${timeSlot}</div>`).join('')}
+            <button id="bookslotbtn">Book this slot</button>
           </div>
           <p>Like!    <span class="like-glyph">&#x2661;</span></p>
       </div>
@@ -21,3 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
         .join("");
     });
 });
+
