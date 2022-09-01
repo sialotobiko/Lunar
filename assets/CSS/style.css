@@ -27,3 +27,11 @@ button{
     color: white;
     border-radius: 10%;
 }
+
+.hairstylesdiv p{
+    font-size: 20pt;
+}
+
+.hairstylesdiv span{
+    font-size: 30pt;
+}
