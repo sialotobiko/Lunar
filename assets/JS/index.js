@@ -67,7 +67,7 @@ function renderOneHairstyle(hairstyle) {
           <h2>${hairstyle.name}</h2>
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
-          <button onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
+          <button onclick="toggleTimeSlotsDiv(); showBookedAppointmentAlert() " >Book Appointment</button>
           <br>
           <br>
           <div id="timeslots">${hairstyle.timeSlot}</div>
@@ -92,6 +92,10 @@ function toggleTimeSlotsDiv() {
 }
 }
 
+function showBookedAppointmentAlert(){
+    alert(`Successful!You booked an appointment for ${timeSlot}`);
+}
+
 
 function getAllHairstyles(){
     fetch("http://localhost:3000/hairstylesData")
@@ -104,3 +108,4 @@ function initialize() {
     //hairstylesData.forEach (hairstyle => renderOneHairstyle(hairstyle))
 }
 initialize();
+
