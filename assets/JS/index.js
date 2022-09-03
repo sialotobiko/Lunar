@@ -1,43 +1,89 @@
-const hairstylesApi ="http://localhost:3000/hairstyles"
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch (hairstylesApi)
-    .then((res) => res.json())
-    .then((hairstyles) => {
-      document.getElementById("hairstyles").innerHTML = hairstyles
-        .map(
-          (hairstyle) => `
-          <div class="hairstyle" id="hairstyle1">
+// fetch("http://localhost:3000/hairstyles")
+// .then(res => res.json())
+// .then(hairstylesData => console.log(hairstylesData))
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   fetch(hairstylesApi)
+//     .then((res) => res.json())
+//     .then((hairstyles) => {
+//       console.log(hairstyles);
+//       document.getElementById("hairstyles").innerHTML = hairstyles
+//         .map(
+//           (hairstyle) => `
+//           <div class="hairstyle" id="hairstyle1">
+//           <h2>${hairstyle.name}</h2>
+//           <img src="${hairstyle.image}">
+//           <h2>${hairstyle.price}</h2>
+//           <button onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
+//           <br>
+//           <div id="timeslots">
+//             ${hairstyle.timeSlot
+//               .map((timeSlot) => `<div>${timeSlot}</div>`)
+//               .join("")}
+//             <br>
+//             <button id="bookslotbtn">Book this slot</button>
+//           </div>
+
+//           <p>Like!    <span class="like-glyph">&#x2661;</span></p>
+//       </div>
+
+// `
+//         )
+//         .join("");
+//     });
+// });
+
+// function toggleTimeSlotsDiv() {
+//   let time = document.getElementById("timeslots");
+//   let hairdo = document.getElementById("hairstyles");
+//   for (let item of hairdo) {
+//     item.addEventListener("click", () => {
+//       if (time.style.display === "none") {
+//         time.style.display = "block";
+//       } else {
+//         time.style.display = "none";
+//       }
+//     });
+//   }
+// }
+
+//   document.querySelector("#bookbtn").addEventListener("click", toggleTimeSlotsDiv);
+//    () =>
+//    {
+//     // fetch (hairstylesApi)
+//     // .then((res) => res.json())
+//     // .then((timeSlots) => {
+//     //     document.querySelector(".timeslots").toggleTimeSlotsDiv()
+//     // })
+// })
+
+function renderOneHairstyle(hairstyle) {
+  let card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
           <h2>${hairstyle.name}</h2>
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
-          <button id="bookbtn">Book Appointment</button>
+          <button onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
           <br>
-          <div class="timeslots">
-            
-          </div>
-          
+          <div id="timeslots">${hairstyle.timeSlot}</div>
+          <br>
           <p>Like!    <span class="like-glyph">&#x2661;</span></p>
       </div>
+    `
+  document.querySelector("#hairstyles").appendChild(card);
+}
 
-`
-        )
-        .join("");
-    });
-});
+function getAllHairstyles(){
+    fetch("http://localhost:3000/hairstylesData")
+    .then(res => res.json())
+    .then(hairstylesData => hairstylesData.forEach (hairstyle => renderOneHairstyle(hairstyle)))
+}
 
-document.querySelector("#bookbtn").addEventListener("click", () => {
-    fetch (hairstylesApi)
-    .then((res) => res.json())
-    .then((timeSlots) => {
-        document.querySelector(".timeslots").innerHTML = timeSlots
-        .map(
-            (timeslot) => `
-            <div class="timeslots">
-            ${hairstyle.timeSlot.map(timeSlot=>`<div>${timeSlot}</div>`).join('')}
-            <button id="bookslotbtn">Book this slot</button>
-          </div>
-            `
-        )
-    })
-})
+function initialize() {
+    getAllHairstyles();
+    //hairstylesData.forEach (hairstyle => renderOneHairstyle(hairstyle))
+}
+initialize();
