@@ -63,10 +63,12 @@ function renderOneHairstyle(hairstyle) {
   let card = document.createElement("div");
   card.className = "card";
   card.innerHTML = `
+        <div class="hairstyles id="hairstyles">
           <h2>${hairstyle.name}</h2>
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
           <button onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
+          <br>
           <br>
           <div id="timeslots">${hairstyle.timeSlot}</div>
           <br>
@@ -75,6 +77,21 @@ function renderOneHairstyle(hairstyle) {
     `
   document.querySelector("#hairstyles").appendChild(card);
 }
+
+function toggleTimeSlotsDiv() {
+  let time = document.getElementById("timeslots");
+  let hairdo = document.getElementById("hairstyles");
+  for (let item of hairdo) {
+    item.addEventListener("click", () => {
+      if (time.style.display === "none") {
+        time.style.display = "block";
+      } else {
+        time.style.display = "none";
+      }
+    })
+}
+}
+
 
 function getAllHairstyles(){
     fetch("http://localhost:3000/hairstylesData")
