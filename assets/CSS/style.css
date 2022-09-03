@@ -24,10 +24,14 @@
     justify-content: space-between;
 }
 
-.hairstyle{
+.hairstyles{
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.hairstyles #timeslots{
+    font-size: 20pt;
 }
 
 .hairstylesdiv img{
