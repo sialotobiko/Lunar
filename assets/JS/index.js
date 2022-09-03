@@ -1,8 +1,4 @@
 
-// fetch("http://localhost:3000/hairstyles")
-// .then(res => res.json())
-// .then(hairstylesData => console.log(hairstylesData))
-
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   fetch(hairstylesApi)
@@ -72,7 +68,9 @@ function renderOneHairstyle(hairstyle) {
           <br>
           <div id="timeslots">${hairstyle.timeSlot}</div>
           <br>
-          <p>Like!    <span class="like-glyph">&#x2661;</span></p>
+          <br>
+          <button id="likebtn"> Like!</button>
+          
       </div>
     `
   document.querySelector("#hairstyles").appendChild(card);
@@ -92,8 +90,10 @@ function toggleTimeSlotsDiv() {
 // }
 
 let time = document.getElementById("timeslots");
-if (time.style.display === "block"){
-    time.style.display === "none";
+if (time.style.display === "none"){
+    time.style.display = "block";
+}else{
+    time.style.display = "none";
 }
 }
 
@@ -110,8 +110,15 @@ function initialize() {
 }
 initialize();
 
-let bookButton = getElementById("bookbtn");
+//let bookButton = getElementById("bookbtn");
 function showBookedAppointmentAlert(timeSlot){
     alert(`Successful!You booked an appointment for ${timeSlot}`);
 }
 //bookButton.addEventListener('click', showBookedAppointmentAlert);
+
+//The Like Function
+
+function like(){
+    let likebutton = document.querySelector("#likebtn")
+    likebutton.innerHTML = "Liked!"
+}
