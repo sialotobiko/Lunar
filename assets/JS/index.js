@@ -69,7 +69,7 @@ function renderOneHairstyle(hairstyle) {
           <div id="timeslots">${hairstyle.timeSlot}</div>
           <br>
           <br>
-          <button id="likebtn"> Like!</button>
+          <button id="likebtn" onclick="like()"> Like!</button>
           
       </div>
     `
