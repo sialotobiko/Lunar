@@ -16,7 +16,7 @@
 //           <h2>${hairstyle.name}</h2>
 //           <img src="${hairstyle.image}">
 //           <h2>${hairstyle.price}</h2>
-//           <button onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
+//           <button  onclick="toggleTimeSlotsDiv()" >Book Appointment</button>
 //           <br>
 //           <div id="timeslots">
 //             ${hairstyle.timeSlot
@@ -67,7 +67,7 @@ function renderOneHairstyle(hairstyle) {
           <h2>${hairstyle.name}</h2>
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
-          <button onclick="toggleTimeSlotsDiv(); showBookedAppointmentAlert() " >Book Appointment</button>
+          <button id="bookbtn" onclick="toggleTimeSlotsDiv(); showBookedAppointmentAlert();" >Book Appointment</button>
           <br>
           <br>
           <div id="timeslots">${hairstyle.timeSlot}</div>
@@ -79,21 +79,22 @@ function renderOneHairstyle(hairstyle) {
 }
 
 function toggleTimeSlotsDiv() {
-  let time = document.getElementById("timeslots");
-  let hairdo = document.getElementById("hairstyles");
-  for (let item of hairdo) {
-    item.addEventListener("click", () => {
-      if (time.style.display === "none") {
-        time.style.display = "block";
-      } else {
-        time.style.display = "none";
-      }
-    })
-}
-}
+//   let time = document.getElementById("timeslots");
+//   let hairdo = document.getElementById("hairstyles");
+//   for (let item of hairstylesData) {
+//     item.addEventListener("click", () => {
+//       if (time.style.display === "none") {
+//         time.style.display = "block";
+//       } else {
+//         time.style.display = "none";
+//       }
+//     })
+// }
 
-function showBookedAppointmentAlert(){
-    alert(`Successful!You booked an appointment for ${timeSlot}`);
+let time = document.getElementById("timeslots");
+if (time.style.display === "block"){
+    time.style.display === "none";
+}
 }
 
 
@@ -109,3 +110,8 @@ function initialize() {
 }
 initialize();
 
+let bookButton = getElementById("bookbtn");
+function showBookedAppointmentAlert(timeSlot){
+    alert(`Successful!You booked an appointment for ${timeSlot}`);
+}
+//bookButton.addEventListener('click', showBookedAppointmentAlert);
