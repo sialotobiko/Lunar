@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", initialize());
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   fetch(hairstylesApi)
@@ -63,7 +63,7 @@ function renderOneHairstyle(hairstyle) {
           <h2>${hairstyle.name}</h2>
           <img src="${hairstyle.image}">
           <h2>${hairstyle.price}</h2>
-          <button id="bookbtn" onclick="toggleTimeSlotsDiv(); showBookedAppointmentAlert();" >Book Appointment</button>
+          <button id="bookbtn" onclick="toggleTimeSlotsDiv(); showBookedAppointmentAlert()" >Book Appointment</button>
           <br>
           <br>
           <div id="timeslots">${hairstyle.timeSlot}</div>
@@ -75,7 +75,7 @@ function renderOneHairstyle(hairstyle) {
     `
   document.querySelector("#hairstyles").appendChild(card);
 }
-
+console.log(renderOneHairstyle)
 function toggleTimeSlotsDiv() {
 //   let time = document.getElementById("timeslots");
 //   let hairdo = document.getElementById("hairstyles");
@@ -108,13 +108,20 @@ function initialize() {
     getAllHairstyles();
     //hairstylesData.forEach (hairstyle => renderOneHairstyle(hairstyle))
 }
-initialize();
+//initialize();
 
 //let bookButton = getElementById("bookbtn");
-function showBookedAppointmentAlert(timeSlot){
-    alert(`Successful!You booked an appointment for ${timeSlot}`);
+
+//let timeAlert = document.getElementById("bookbtn").addEventListener("click", showBookedAppointmentAlert)
+console.log(timeAlert)
+function showBookedAppointmentAlert(){
+    let timeDateAlert = document.getElementById("timeslots").textContent
+    alert(`Successful!You booked an appointment for ${timeDateAlert}`);
+    
 }
 //bookButton.addEventListener('click', showBookedAppointmentAlert);
+
+
 
 //The Like Function
 
@@ -122,3 +129,20 @@ function like(){
     let likebutton = document.querySelector("#likebtn")
     likebutton.innerHTML = "Liked!"
 }
+
+
+//The comments section
+
+let submit = document.querySelector("#submit")
+
+submit.addEventListener("submit", (e) => {
+    e.preventDefault()
+    postComment(document.getElementById("comment").value)
+})
+
+function postComment(theComment){
+    let myComment = document.createElement("li")
+    myComment.textContent = theComment
+    document.getElementById("commentscontainer").appendChild(myComment)
+}
+
